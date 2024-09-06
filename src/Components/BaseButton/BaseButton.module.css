@@ -1,0 +1,67 @@
+.base-button {
+  padding: 5px 10px;
+  background-color: rgb(29, 109, 175);
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 2px solid #fff;
+  z-index: 0;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.base-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, #e66465, #9198e5, #e66465);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  animation: colorfulBG 20s linear infinite;
+}
+
+@keyframes colorfulBG {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.base-button:active {
+  color: #e66465;
+  transform: scale(1.1, 1.1);
+}
+
+.base-button:active::after {
+  background: transparent;
+}
+
+.base-button:hover::before {
+  opacity: 1;
+}
+
+.base-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  /* background: #111; */
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}

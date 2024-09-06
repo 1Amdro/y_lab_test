@@ -1,0 +1,46 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 200px;
+  grid-auto-rows: auto;
+  grid-row-gap: 8px;
+  margin-bottom: 10px;
+  animation: moves 0.5s ease-in-out;
+}
+
+@keyframes moves {
+  0% {
+    transform: translate(-100px, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(+100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.field {
+  padding: 5px 10px;
+  background-color: rgb(29, 109, 175);
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  transition: border 0.2s ease-in-out, background 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.field::placeholder {
+  color: #b1bdc8;
+}
+
+.field:focus-visible {
+  outline: none;
+  border: 2px solid rgb(111 177 232);
+  background-color: aliceblue;
+  color: black;
+}
