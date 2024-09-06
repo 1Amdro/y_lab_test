@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## For test
 
-email: "test@example.com"
-password: "test123"
+email: test@example.com
+password: test123
 
 ## Available Scripts
 
